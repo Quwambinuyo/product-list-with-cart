@@ -24,11 +24,9 @@ function updateOrderTotal() {
   });
 
   // Ensure the element exists before setting its text content
-  const totalElement = document.querySelector(".order-total-count");
-  if (totalElement) {
-    totalElement.textContent = formatCurrency(total);
-  } else {
-    console.error("Element with class 'order-total-count' not found.");
+  const totalCostItem = document.querySelector(".order-total-count");
+  if (totalCostItem) {
+    totalCostItem.textContent = formatCurrency(total);
   }
 }
 
@@ -55,9 +53,9 @@ export function addToCart(productId) {
   saveToStorage(cart);
 
   // Update cart quantity in the DOM
-  const quantityElement = document.querySelector(".cart-quantity-count");
-  if (quantityElement) {
-    quantityElement.textContent = getCartQuantity();
+  const cartItemCount = document.querySelector(".cart-quantity-count");
+  if (cartItemCount) {
+    cartItemCount.textContent = getCartQuantity();
   }
 
   // Update the order total
