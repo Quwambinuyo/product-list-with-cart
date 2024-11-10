@@ -12,23 +12,24 @@ const cart = getCartfromStorage();
 products.forEach((product) => {
   const productContainer = document.querySelector(".product-container");
   productContainer.innerHTML += `<div class="space-y-10">
-            <div class="relative">
+            <div class="relative border border-orange-400 rounded-md">
               <img 
                 class="md:hidden sm:rounded-md"
                 src="${product.image}"
                 alt=""
               />
               <img 
-                class="hidden md:inline rounded-xl"
+                class="hidden  md:inline sm:rounded-md"
                 src="${product.image}"
                 alt=""
               />
+
 
               <div
                 class="absolute right-0 left-0 -bottom-5 flex justify-center "
               >
           <button 
-              class="js-add-to-cart flex items-center gap-3 bg-white px-5 py-2 rounded-2xl border border-red-600"
+              class="js-add-to-cart flex items-center gap-3 bg-white px-5 py-2 rounded-2xl border active:border-orange-600 active:bg-orange-600 "
               data-product-id="${product.id}"
               >
              <img src="./images/icon-add-to-cart.svg" alt="" /> Add to cart
