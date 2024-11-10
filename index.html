@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body>
+    <div
+      class="grid px-6 py-8 collection bg-rose-50 gap-7 sm:px-7 md:px-8 lg:px-10 xl:px-14 lg:grid-cols-11"
+    >
+      <div class="lg:col-span-7">
+        <h1 class="pb-4 text-3xl font-bold">Desserts</h1>
+        <div
+          class="grid gap-6 product-container sm:grid-cols-2 md:grid-cols-3"
+        ></div>
+        <!-- Product container Ends here -->
+      </div>
+      <!-- Product container div wrapper ends here -->
+
+      <div
+        class="self-start gap-6 p-6 py-6 align-middle bg-white rounded-lg lg:col-span-4 sm:flex-col lg:mx-3 lg:px-3 sm:flex"
+      >
+        <h5 class="text-2xl text-rose-400">
+          Your cart (<span class="cart-quantity-count">0</span>)
+        </h5>
+
+        <div class="cart-container"></div>
+        <div class="filled-cart"></div>
+      </div>
+      <!-- Cart item div ends here -->
+    </div>
+    <!-- Product container and cart items div ends here -->
+
+    <script type="module" src="./scripts/shop.js"></script>
+  </body>
+</html>
