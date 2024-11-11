@@ -23,7 +23,7 @@ function updateOrderTotal() {
     }
   });
 
-  // Ensure the element exists before setting its text content
+  /**setting total cost of items to the dom */
   const totalCostItem = document.querySelector(".order-total-count");
   if (totalCostItem) {
     totalCostItem.textContent = formatCurrency(total);
