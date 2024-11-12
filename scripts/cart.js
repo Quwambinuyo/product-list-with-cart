@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <h class="order-total-count text-2xl font-bold"></h>
       </div>
       <div class="flex flex-col gap-2">
-        <div class="flex bg-rose-100 p-3 rounded-xl justify-center">
+        <div class="flex bg-rose100 p-3 rounded-xl justify-center">
           <img src="./images/icon-carbon-neutral.svg" alt="" />
           <p>This is a <strong>carbon-neutral</strong> delivery</p>
         </div>
-        <button class="bg-rose-700 p-3 rounded-xl text-white">
+        <button class="bg-red10 p-3 rounded-xl text-white">
           Confirm Order
         </button>
       </div>
