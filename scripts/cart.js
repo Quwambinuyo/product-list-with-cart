@@ -26,7 +26,7 @@ function updateOrderTotal() {
   /**setting total cost of items to the dom */
   const totalCostItem = document.querySelector(".order-total-count");
   if (totalCostItem) {
-    totalCostItem.textContent = formatCurrency(total);
+    totalCostItem.textContent = `$${formatCurrency(total)}`;
   }
 }
 
@@ -101,20 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 </p>
               </div>
             </div>
-            <button class="remove-from-cart border p-2 rounded-[50%]" data-product-id="${matchingProduct.id}">
-              <img src="./images/icon-remove-item.svg" alt="" />
+            <button class="remove-from-cart border w-5 h-5 flex items-center justify-center rounded-full hover:border-black" data-product-id="${matchingProduct.id}">
+           <i class="fa-solid fa-xmark text-gray-300 hover:text-black"></i>
             </button>
-          </div>
-        `;
+            </div>
+            `;
       }
     });
   } else {
     cartContainer.innerHTML = `
-      <div class="empty-cart">
+        <div class="empty-cart">
         <img src="./images/illustration-empty-cart.svg" alt="" />
         <p>Your added items will appear here</p>
-      </div>
-    `;
+        </div>
+        `;
   }
 
   // Call updateOrderTotal to initialize the total correctly

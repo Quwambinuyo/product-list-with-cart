@@ -62,10 +62,9 @@ document.querySelectorAll(".js-add-to-cart").forEach((cartBtn) => {
     const cartText = cartBtn.querySelector(".add-cart-text");
     const quantityText = cartBtn.querySelector(".text-white");
 
-    cartBtn.classList.add("bg-red10");
-
     if (cartText) cartText.classList.add("hidden");
     if (addToCartIcon) addToCartIcon.classList.add("hidden");
+    // if (addToCartIcon) addToCartIcon.className = "hidden, bg-red10";
     if (incrementIcon) incrementIcon.classList.remove("hidden");
     if (decrementIcon) decrementIcon.classList.remove("hidden");
     if (quantityText) quantityText.classList.remove("hidden");
