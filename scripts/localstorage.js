@@ -14,5 +14,11 @@ export function getCartfromStorage() {
 
 export function getCartQuantity() {
   const cart = getCartfromStorage();
-  return cart.reduce((acc, cur) => acc + cur?.quantity, 0);
+
+  const cartItemCount = document.querySelector(".cart-quantity-count");
+  const cartCount = cart.reduce((acc, cur) => acc + cur?.quantity, 0);
+
+  if (cartItemCount) {
+    cartItemCount.textContent = cartCount;
+  }
 }

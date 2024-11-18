@@ -5,6 +5,7 @@ import {
   getCartfromStorage,
   getCartQuantity,
 } from "./localstorage.js";
+import "./shop.js";
 
 // Get cart data from storage
 const cart = getCartfromStorage();
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="./images/icon-carbon-neutral.svg" alt="" />
           <p>This is a <strong>carbon-neutral</strong> delivery</p>
         </div>
-        <button class="bg-red10 p-3 rounded-xl text-white">
+        <button class="bg-red10 p-3 rounded-xl text-white confirm-order">
           Confirm Order
         </button>
       </div>
@@ -148,4 +149,58 @@ function removeFromCart(productId) {
   if (quantityElement) {
     quantityElement.textContent = getCartQuantity();
   }
+}
+
+export const incrementProductInCart = (id) => {
+  const cart = getCartfromStorage();
+
+  const addCart = cart.map((item) => {
+    if (item?.productId === id) {
+      return { ...item, quantity: item?.quantity + 1 };
+    } else {
+      return item;
+    }
+  });
+
+  saveToStorage(addCart);
+
+  // Update cart quantity in the DOM
+  const cartItemCount = document.querySelector(".cart-quantity-count");
+  if (cartItemCount) {
+    cartItemCount.textContent = getCartQuantity();
+  }
+
+  // Update the order total
+  updateOrderTotal();
+};
+
+export const decrementProductFromCart = (id) => {
+  const cart = getCartfromStorage();
+
+  const minusCart = cart.map((item) => {
+    if (item?.productId === id) {
+      return { ...item, quantity: item?.quantity - 1 };
+    } else {
+      return item;
+    }
+  });
+
+  saveToStorage(minusCart);
+
+  // Update cart quantity in the DOM
+  const cartItemCount = document.querySelector(".cart-quantity-count");
+  if (cartItemCount) {
+    cartItemCount.textContent = getCartQuantity();
+  }
+
+  // Update the order total
+  updateOrderTotal();
+};
+
+document
+  .querySelector(".confirm-order")
+  .addEventListener("click", confirmOrder);
+
+function confirmOrder() {
+  console.log(123);
 }

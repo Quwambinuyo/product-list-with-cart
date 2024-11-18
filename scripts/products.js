@@ -84,10 +84,10 @@ export const products = [
   },
 
   {
-    id: "207",
+    id: "208",
     image: "./images/image-panna-cotta-mobile.jpg",
-    name: "Tiramisu",
-    title: "Classic Tiramisu",
+    name: "Vanilla",
+    title: "Vanilla Panna Cotta",
     price: 5.0,
     quantity: 1,
   },
